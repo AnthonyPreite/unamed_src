@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
+
+header {
+  background: #090909;
+  color: rgb(235, 255, 204);
+  width: 100%;
+  padding: 1rem;
+  text-shadow: 0px 0px 5px rgb(255, 47, 47);
+  border: 1px solid rgb(37, 37, 37);
+}
+
+#zoneDeSpawn {
+  position: relative;
+  height: calc(100% - 49px);
+  border: 1px solid rgba(255, 47, 47, 0.192);
+  cursor: url(src/img/crosshair.png);
+  overflow: hidden;
+}
+
+#zoneDeSpawn::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* border: 1px solid greenyellow; */
+  background-image: url("src/img/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #3a3a3a;
+  z-index: 1;
+  opacity: 50%;
+}
+
+#ecranJeu {
+  position: relative;
+  border: 1px solid;
+  width: 390px;
+  height: 844px;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(255, 47, 47, 0.192);
+  cursor: crosshair;
+  background-color: #000000;
+}
+
+.ecranTitre {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-image: url("src/img/imscared.webp");
+  background-repeat: no-repeat;
+}
+
+.titrePrincipal {
+  color: red;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+button {
+  border: none;
+  position: absolute;
+  bottom: 1rem;
+  margin-bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  color: rgb(235, 255, 204);
+  text-shadow: 0px 0px 5px rgb(255, 47, 47);
+  background-color: #090909;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 1px solid rgb(255, 47, 47);
+}
+
+.ver {
+  z-index: 2;
+  color: red;
+  text-align: center;
+  /*transform: translateX(-50%);*/
+}
+
+.ennemi {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  background-position-x: 0px;
+  /*background-color: greenyellow;*/
+  background-image: url("src/img/faces.png");
+}
+
+.ennemi_mort {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  background-position-x: -61px;
+  /*background-color: red;*/
+  background-image: url("src/img/faces.png");
+  filter: contrast(200);
+}
+
+.hidden {
+  display: none;
+}
+
+.imagelvl {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 3rem;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.imagelvl.imagelvl-2 {
+  background-image: url("src/img/meme-traumatized.gif");
+  color: red;
+}
+
+.imagelvl.imagelvl-3 {
+  background-image: url("src/img/2.jpeg");
+}
+
+.imagelvl.imagelvl-gameover {
+  background-image: url("src/img/horror.jpg");
+  background-size: 160%;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  color: rgb(134, 40, 40);
+  height: 844px;
+  width: 390px;
+  animation: zoom 3s infinite alternate-reverse;
+}
+
+.imagelvl.imagelvl-gameover .title {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: url("src/img/red.jpg");
+  filter: brightness(5);
+}
+
+@keyframes zoom {
+  from {
+    background-size: 220%;
+    background-image: url("src/img/horror2.jpg");
+
+    font-size: 4rem;
+  }
+  50% {
+    background-image: url("src/img/horror.jpg");
+    background-size: 120%;
+
+    font-size: 3rem;
+  }
+  to {
+    background-size: 220%;
+    background-image: url("src/img/horror2.jpg");
+    font-size: 4rem;
+  }
+}
